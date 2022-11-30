@@ -2,7 +2,7 @@ streamlit
 datetime
 yahoo_fin
 yfinance 
-pandas as pd
+pandas
 matplotlib
 numpy
 plotly
