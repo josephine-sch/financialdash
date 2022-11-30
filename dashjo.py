@@ -39,8 +39,7 @@ def tabsum():
 
     def tabdf(SelectPeriod):
 
-        datetabdf = end_date - timedelta(dfduration.loc[dfduration['DurationText'] == SelectPeriod, 'Duration'].iloc[0].item()) #https://docs.streamlit.io/library/api-reference/widgets/st.radio
-
+        datetabdf = end_date - timedelta(dfduration.loc[dfduration['DurationText'] == SelectPeriod, 'Duration'].iloc[0].item())
         lastdate = si.get_data(tickerSymbol, start_date=datetabdf, end_date=end_date)
 
         fig, ax1 = plt.subplots(figsize=(8, 8))
@@ -118,8 +117,7 @@ def tabchart():
                                      low=lastdate3['low'],
                                      close=lastdate3['close'],)])
         fig.update_layout(xaxis_rangeslider_visible=False)
-        #x=go.Scatter(x=lastdate3['datetabdf2'], y=lastdate3['close'].rolling(50).mean(), mode='lines', name='50MA') ??????????
-        #fig.add_trace(x)
+
         st.plotly_chart(fig)
 
 
@@ -147,9 +145,6 @@ def tabfi():
             Report['TTM'] = Report.sum(axis=1)
         return st.dataframe(Report)
     tabfidf(type1=type1, typetime=typetime)
-
-
-# https://stackoverflow.com/questions/73093143/getting-ttm-income-statement-yahoo-finance-using-yahoo-fin
 
 # cours 3
 def tabMCS():
@@ -294,4 +289,5 @@ def sidebar():
 
 if __name__ == "__main__":
     sidebar()
+
 
