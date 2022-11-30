@@ -270,7 +270,7 @@ def sidebar():
         st.experimental_rerun()
 
     select_tab = st.sidebar.radio("Select tab",
-                                  ['Description', 'Summary', 'Chart', 'Financials', 'Monte Carlo simulation','My analysis'], default=default)
+                                  ['Description', 'Summary', 'Chart', 'Financials', 'Monte Carlo simulation','My analysis'])
 
     # Show the selected tab
     if select_tab == 'Description':
